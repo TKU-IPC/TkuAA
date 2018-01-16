@@ -8,14 +8,6 @@
 - 與 SSO HEADER 取得之「人員代號」與「單位代碼」比對是否符合
 - 
 
-	public static bool IsSomeMgn(string key , string mgn)
-	{
-		if (string.IsNullOrEmpty(key) || string.IsNullOrEmpty(mgn))
-		{
-		return false;
-		}
-		return mgn.Contains(key);
-	}
 
 	public static bool IsSomeMgn(string[] keys , string mgn)
 	{

@@ -1,0 +1,68 @@
+﻿@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+<div class="row">
+    <div class="col-sm-offset-4 col-sm-8" id="providerView">        
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-offset-4 col-sm-8">
+        @Html.ValidationSummary(true, string.Empty, new { @class = "text-danger" })
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-offset-4 col-sm-8">
+        @using (Html.BeginForm("RedirectToProvider", "Account", FormMethod.Post)) {
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <select class="form-control" name="provider">
+                        <option value="Local">本地驗證</option>
+                        <option value="Mix">混和驗證</option>
+                        <option value="Tku">入口驗證</option>
+                        <option value="Facebook">臉書驗證</option>
+                        <option value="Google">谷歌驗證</option>
+                    </select>
+                </div>
+            </div>
+        }        
+    </div>
+</div>
+
+@section scripts {
+    <script>
+        $(function () {
+            var providerElem    = $("select[name='provider']"),
+                provider        = providerElem.val(),
+                getProviderView = function (provider) {
+                    var ajaxSettings = {
+                        data: { provider: provider },
+                        method: "post",
+                        url: SYS_NAME + "Account/GetProviderView",
+
+                        success: function (html) {
+                            $("#providerView").empty().append(html);
+                        }
+                    };
+
+                    $.ajax(ajaxSettings);
+                };
+
+            providerElem.on("change", function () {                
+                provider = $(this).val();
+                                
+                if (!(provider === "Local" || provider === "Mix")) {
+                    $("form[action$='Provider']").submit();
+                } else {
+                    getProviderView(provider);
+                }
+            });
+
+            getProviderView(provider);
+        });
+    </script>
+}

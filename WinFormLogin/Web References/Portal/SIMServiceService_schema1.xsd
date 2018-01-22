@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://services.ldap.tku.edu.tw/" targetNamespace="http://services.ldap.tku.edu.tw/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="authentication" type="tns:authentication" />
+  <xs:element name="authenticationResponse" type="tns:authenticationResponse" />
+  <xs:element name="getGroupList" type="tns:getGroupList" />
+  <xs:element name="getGroupListByDept" type="tns:getGroupListByDept" />
+  <xs:element name="getGroupListByDeptResponse" type="tns:getGroupListByDeptResponse" />
+  <xs:element name="getGroupListByUser" type="tns:getGroupListByUser" />
+  <xs:element name="getGroupListByUserResponse" type="tns:getGroupListByUserResponse" />
+  <xs:element name="getGroupListResponse" type="tns:getGroupListResponse" />
+  <xs:element name="getMemberOfGroup" type="tns:getMemberOfGroup" />
+  <xs:element name="getMemberOfGroupByUser" type="tns:getMemberOfGroupByUser" />
+  <xs:element name="getMemberOfGroupByUserResponse" type="tns:getMemberOfGroupByUserResponse" />
+  <xs:element name="getMemberOfGroupResponse" type="tns:getMemberOfGroupResponse" />
+  <xs:element name="isMemberOf" type="tns:isMemberOf" />
+  <xs:element name="isMemberOfByUser" type="tns:isMemberOfByUser" />
+  <xs:element name="isMemberOfByUserResponse" type="tns:isMemberOfByUserResponse" />
+  <xs:element name="isMemberOfResponse" type="tns:isMemberOfResponse" />
+  <xs:complexType name="getGroupListByDept">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+      <xs:element minOccurs="0" name="arg2" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getGroupListByDeptResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="tns:tkuGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tkuGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cname" type="xs:string" />
+      <xs:element minOccurs="0" name="ename" type="xs:string" />
+      <xs:element minOccurs="0" name="gid" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getGroupList">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+      <xs:element minOccurs="0" name="arg2" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getGroupListResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="tns:tkuGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getGroupListByUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+      <xs:element minOccurs="0" name="arg2" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getGroupListByUserResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="tns:tkuGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getMemberOfGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+      <xs:element minOccurs="0" name="arg2" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getMemberOfGroupResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="tns:tkUperson" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tkUperson">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ab_coll_cls" type="xs:string" />
+      <xs:element minOccurs="0" name="birth_date" type="xs:string" />
+      <xs:element minOccurs="0" name="ch_coll_name" type="xs:string" />
+      <xs:element minOccurs="0" name="ch_dept_name" type="xs:string" />
+      <xs:element minOccurs="0" name="ch_name" type="xs:string" />
+      <xs:element minOccurs="0" name="cls" type="xs:string" />
+      <xs:element minOccurs="0" name="clsf_cd" type="xs:string" />
+      <xs:element minOccurs="0" name="clsf_cd_1" type="xs:string" />
+      <xs:element minOccurs="0" name="clsf_cd_2" type="xs:string" />
+      <xs:element minOccurs="0" name="clsf_cd_3" type="xs:string" />
+      <xs:element minOccurs="0" name="clsf_cd_4" type="xs:string" />
+      <xs:element minOccurs="0" name="clsf_cd_5" type="xs:string" />
+      <xs:element minOccurs="0" name="clsf_name" type="xs:string" />
+      <xs:element minOccurs="0" name="clsf_name_1" type="xs:string" />
+      <xs:element minOccurs="0" name="clsf_name_2" type="xs:string" />
+      <xs:element minOccurs="0" name="clsf_name_3" type="xs:string" />
+      <xs:element minOccurs="0" name="clsf_name_4" type="xs:string" />
+      <xs:element minOccurs="0" name="clsf_name_5" type="xs:string" />
+      <xs:element minOccurs="0" name="coll" type="xs:string" />
+      <xs:element minOccurs="0" name="coll_sect" type="xs:string" />
+      <xs:element minOccurs="0" name="dept_cd" type="xs:string" />
+      <xs:element minOccurs="0" name="dept_cd_1" type="xs:string" />
+      <xs:element minOccurs="0" name="dept_cd_2" type="xs:string" />
+      <xs:element minOccurs="0" name="dept_cd_3" type="xs:string" />
+      <xs:element minOccurs="0" name="dept_cd_4" type="xs:string" />
+      <xs:element minOccurs="0" name="dept_cd_5" type="xs:string" />
+      <xs:element minOccurs="0" name="dept_name" type="xs:string" />
+      <xs:element minOccurs="0" name="dept_name_1" type="xs:string" />
+      <xs:element minOccurs="0" name="dept_name_2" type="xs:string" />
+      <xs:element minOccurs="0" name="dept_name_3" type="xs:string" />
+      <xs:element minOccurs="0" name="dept_name_4" type="xs:string" />
+      <xs:element minOccurs="0" name="dept_name_5" type="xs:string" />
+      <xs:element minOccurs="0" name="duty_type" type="xs:string" />
+      <xs:element minOccurs="0" name="duty_type_1" type="xs:string" />
+      <xs:element minOccurs="0" name="duty_type_2" type="xs:string" />
+      <xs:element minOccurs="0" name="duty_type_3" type="xs:string" />
+      <xs:element minOccurs="0" name="duty_type_4" type="xs:string" />
+      <xs:element minOccurs="0" name="duty_type_5" type="xs:string" />
+      <xs:element minOccurs="0" name="duty_type_name" type="xs:string" />
+      <xs:element minOccurs="0" name="duty_type_name_1" type="xs:string" />
+      <xs:element minOccurs="0" name="duty_type_name_2" type="xs:string" />
+      <xs:element minOccurs="0" name="duty_type_name_3" type="xs:string" />
+      <xs:element minOccurs="0" name="duty_type_name_4" type="xs:string" />
+      <xs:element minOccurs="0" name="duty_type_name_5" type="xs:string" />
+      <xs:element minOccurs="0" name="edu_cd" type="xs:string" />
+      <xs:element minOccurs="0" name="edu_grp_name" type="xs:string" />
+      <xs:element minOccurs="0" name="emp_email" type="xs:string" />
+      <xs:element minOccurs="0" name="empl_no" type="xs:string" />
+      <xs:element minOccurs="0" name="en_name" type="xs:string" />
+      <xs:element minOccurs="0" name="ext_emp_email" type="xs:string" />
+      <xs:element minOccurs="0" name="ext_stu_email" type="xs:string" />
+      <xs:element minOccurs="0" name="ftpt_type" type="xs:string" />
+      <xs:element minOccurs="0" name="ftpt_type_1" type="xs:string" />
+      <xs:element minOccurs="0" name="ftpt_type_2" type="xs:string" />
+      <xs:element minOccurs="0" name="ftpt_type_3" type="xs:string" />
+      <xs:element minOccurs="0" name="ftpt_type_4" type="xs:string" />
+      <xs:element minOccurs="0" name="ftpt_type_5" type="xs:string" />
+      <xs:element minOccurs="0" name="ftpt_type_name" type="xs:string" />
+      <xs:element minOccurs="0" name="ftpt_type_name_1" type="xs:string" />
+      <xs:element minOccurs="0" name="ftpt_type_name_2" type="xs:string" />
+      <xs:element minOccurs="0" name="ftpt_type_name_3" type="xs:string" />
+      <xs:element minOccurs="0" name="ftpt_type_name_4" type="xs:string" />
+      <xs:element minOccurs="0" name="ftpt_type_name_5" type="xs:string" />
+      <xs:element minOccurs="0" name="grade" type="xs:string" />
+      <xs:element minOccurs="0" name="id_no" type="xs:string" />
+      <xs:element minOccurs="0" name="new_date" type="xs:string" />
+      <xs:element minOccurs="0" name="now_sta" type="xs:string" />
+      <xs:element minOccurs="0" name="pswd" type="xs:string" />
+      <xs:element minOccurs="0" name="quit_date" type="xs:string" />
+      <xs:element minOccurs="0" name="reg_cd" type="xs:string" />
+      <xs:element minOccurs="0" name="sem" type="xs:string" />
+      <xs:element minOccurs="0" name="sex" type="xs:string" />
+      <xs:element minOccurs="0" name="status1" type="xs:string" />
+      <xs:element minOccurs="0" name="status2" type="xs:string" />
+      <xs:element minOccurs="0" name="status3" type="xs:string" />
+      <xs:element minOccurs="0" name="status4" type="xs:string" />
+      <xs:element minOccurs="0" name="stu_email" type="xs:string" />
+      <xs:element minOccurs="0" name="stu_no" type="xs:string" />
+      <xs:element minOccurs="0" name="stu_reg_type" type="xs:string" />
+      <xs:element minOccurs="0" name="study_sta" type="xs:string" />
+      <xs:element minOccurs="0" name="tel" type="xs:string" />
+      <xs:element minOccurs="0" name="tel_no" type="xs:string" />
+      <xs:element minOccurs="0" name="title_cd" type="xs:string" />
+      <xs:element minOccurs="0" name="title_cd_1" type="xs:string" />
+      <xs:element minOccurs="0" name="title_cd_2" type="xs:string" />
+      <xs:element minOccurs="0" name="title_cd_3" type="xs:string" />
+      <xs:element minOccurs="0" name="title_cd_4" type="xs:string" />
+      <xs:element minOccurs="0" name="title_cd_5" type="xs:string" />
+      <xs:element minOccurs="0" name="title_name" type="xs:string" />
+      <xs:element minOccurs="0" name="title_name_1" type="xs:string" />
+      <xs:element minOccurs="0" name="title_name_2" type="xs:string" />
+      <xs:element minOccurs="0" name="title_name_3" type="xs:string" />
+      <xs:element minOccurs="0" name="title_name_4" type="xs:string" />
+      <xs:element minOccurs="0" name="title_name_5" type="xs:string" />
+      <xs:element minOccurs="0" name="type" type="xs:string" />
+      <xs:element minOccurs="0" name="type_1" type="xs:string" />
+      <xs:element minOccurs="0" name="type_2" type="xs:string" />
+      <xs:element minOccurs="0" name="type_3" type="xs:string" />
+      <xs:element minOccurs="0" name="type_4" type="xs:string" />
+      <xs:element minOccurs="0" name="type_5" type="xs:string" />
+      <xs:element minOccurs="0" name="type_name" type="xs:string" />
+      <xs:element minOccurs="0" name="type_name_1" type="xs:string" />
+      <xs:element minOccurs="0" name="type_name_2" type="xs:string" />
+      <xs:element minOccurs="0" name="type_name_3" type="xs:string" />
+      <xs:element minOccurs="0" name="type_name_4" type="xs:string" />
+      <xs:element minOccurs="0" name="type_name_5" type="xs:string" />
+      <xs:element minOccurs="0" name="uid" type="xs:string" />
+      <xs:element minOccurs="0" name="unit1" type="xs:string" />
+      <xs:element minOccurs="0" name="unit1_1" type="xs:string" />
+      <xs:element minOccurs="0" name="unit1_2" type="xs:string" />
+      <xs:element minOccurs="0" name="unit1_3" type="xs:string" />
+      <xs:element minOccurs="0" name="unit1_4" type="xs:string" />
+      <xs:element minOccurs="0" name="unit1_5" type="xs:string" />
+      <xs:element minOccurs="0" name="unit1_name" type="xs:string" />
+      <xs:element minOccurs="0" name="unit1_name_1" type="xs:string" />
+      <xs:element minOccurs="0" name="unit1_name_2" type="xs:string" />
+      <xs:element minOccurs="0" name="unit1_name_3" type="xs:string" />
+      <xs:element minOccurs="0" name="unit1_name_4" type="xs:string" />
+      <xs:element minOccurs="0" name="unit1_name_5" type="xs:string" />
+      <xs:element minOccurs="0" name="user_type" type="xs:string" />
+      <xs:element minOccurs="0" name="yr" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="authentication">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+      <xs:element minOccurs="0" name="arg2" type="xs:string" />
+      <xs:element minOccurs="0" name="arg3" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="authenticationResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:tkUperson" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="isMemberOf">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+      <xs:element minOccurs="0" name="arg2" type="xs:string" />
+      <xs:element minOccurs="0" name="arg3" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="isMemberOfResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getMemberOfGroupByUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+      <xs:element minOccurs="0" name="arg2" type="xs:string" />
+      <xs:element minOccurs="0" name="arg3" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getMemberOfGroupByUserResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="tns:tkUperson" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="isMemberOfByUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+      <xs:element minOccurs="0" name="arg2" type="xs:string" />
+      <xs:element minOccurs="0" name="arg3" type="xs:string" />
+      <xs:element minOccurs="0" name="arg4" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="isMemberOfByUserResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

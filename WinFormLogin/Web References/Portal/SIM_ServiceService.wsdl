@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://services.ldap.tku.edu.tw/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="SIM_ServiceService" targetNamespace="http://services.ldap.tku.edu.tw/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="SIMServiceService_schema1.xsd" namespace="http://services.ldap.tku.edu.tw/" />
+    </xsd:schema>
+  </types>
+  <message name="getGroupListResponse">
+    <part name="parameters" element="tns:getGroupListResponse" />
+  </message>
+  <message name="isMemberOfByUser">
+    <part name="parameters" element="tns:isMemberOfByUser" />
+  </message>
+  <message name="getGroupListByDeptResponse">
+    <part name="parameters" element="tns:getGroupListByDeptResponse" />
+  </message>
+  <message name="getMemberOfGroupResponse">
+    <part name="parameters" element="tns:getMemberOfGroupResponse" />
+  </message>
+  <message name="getMemberOfGroupByUserResponse">
+    <part name="parameters" element="tns:getMemberOfGroupByUserResponse" />
+  </message>
+  <message name="getGroupListByUserResponse">
+    <part name="parameters" element="tns:getGroupListByUserResponse" />
+  </message>
+  <message name="isMemberOfByUserResponse">
+    <part name="parameters" element="tns:isMemberOfByUserResponse" />
+  </message>
+  <message name="isMemberOfResponse">
+    <part name="parameters" element="tns:isMemberOfResponse" />
+  </message>
+  <message name="getGroupList">
+    <part name="parameters" element="tns:getGroupList" />
+  </message>
+  <message name="authentication">
+    <part name="parameters" element="tns:authentication" />
+  </message>
+  <message name="isMemberOf">
+    <part name="parameters" element="tns:isMemberOf" />
+  </message>
+  <message name="getGroupListByDept">
+    <part name="parameters" element="tns:getGroupListByDept" />
+  </message>
+  <message name="authenticationResponse">
+    <part name="parameters" element="tns:authenticationResponse" />
+  </message>
+  <message name="getGroupListByUser">
+    <part name="parameters" element="tns:getGroupListByUser" />
+  </message>
+  <message name="getMemberOfGroupByUser">
+    <part name="parameters" element="tns:getMemberOfGroupByUser" />
+  </message>
+  <message name="getMemberOfGroup">
+    <part name="parameters" element="tns:getMemberOfGroup" />
+  </message>
+  <portType name="SIM_Service">
+    <operation name="authentication">
+      <input wsam:Action="http://services.ldap.tku.edu.tw/SIM_Service/authenticationRequest" message="tns:authentication" />
+      <output wsam:Action="http://services.ldap.tku.edu.tw/SIM_Service/authenticationResponse" message="tns:authenticationResponse" />
+    </operation>
+    <operation name="isMemberOf">
+      <input wsam:Action="http://services.ldap.tku.edu.tw/SIM_Service/isMemberOfRequest" message="tns:isMemberOf" />
+      <output wsam:Action="http://services.ldap.tku.edu.tw/SIM_Service/isMemberOfResponse" message="tns:isMemberOfResponse" />
+    </operation>
+    <operation name="isMemberOfByUser">
+      <input wsam:Action="http://services.ldap.tku.edu.tw/SIM_Service/isMemberOfByUserRequest" message="tns:isMemberOfByUser" />
+      <output wsam:Action="http://services.ldap.tku.edu.tw/SIM_Service/isMemberOfByUserResponse" message="tns:isMemberOfByUserResponse" />
+    </operation>
+    <operation name="getMemberOfGroup">
+      <input wsam:Action="http://services.ldap.tku.edu.tw/SIM_Service/getMemberOfGroupRequest" message="tns:getMemberOfGroup" />
+      <output wsam:Action="http://services.ldap.tku.edu.tw/SIM_Service/getMemberOfGroupResponse" message="tns:getMemberOfGroupResponse" />
+    </operation>
+    <operation name="getMemberOfGroupByUser">
+      <input wsam:Action="http://services.ldap.tku.edu.tw/SIM_Service/getMemberOfGroupByUserRequest" message="tns:getMemberOfGroupByUser" />
+      <output wsam:Action="http://services.ldap.tku.edu.tw/SIM_Service/getMemberOfGroupByUserResponse" message="tns:getMemberOfGroupByUserResponse" />
+    </operation>
+    <operation name="getGroupList">
+      <input wsam:Action="http://services.ldap.tku.edu.tw/SIM_Service/getGroupListRequest" message="tns:getGroupList" />
+      <output wsam:Action="http://services.ldap.tku.edu.tw/SIM_Service/getGroupListResponse" message="tns:getGroupListResponse" />
+    </operation>
+    <operation name="getGroupListByUser">
+      <input wsam:Action="http://services.ldap.tku.edu.tw/SIM_Service/getGroupListByUserRequest" message="tns:getGroupListByUser" />
+      <output wsam:Action="http://services.ldap.tku.edu.tw/SIM_Service/getGroupListByUserResponse" message="tns:getGroupListByUserResponse" />
+    </operation>
+    <operation name="getGroupListByDept">
+      <input wsam:Action="http://services.ldap.tku.edu.tw/SIM_Service/getGroupListByDeptRequest" message="tns:getGroupListByDept" />
+      <output wsam:Action="http://services.ldap.tku.edu.tw/SIM_Service/getGroupListByDeptResponse" message="tns:getGroupListByDeptResponse" />
+    </operation>
+  </portType>
+  <binding name="SIM_ServicePortBinding" type="tns:SIM_Service">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="authentication">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="isMemberOf">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="isMemberOfByUser">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getMemberOfGroup">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getMemberOfGroupByUser">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getGroupList">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getGroupListByUser">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getGroupListByDept">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="SIM_ServiceService">
+    <port name="SIM_ServicePort" binding="tns:SIM_ServicePortBinding">
+      <soap:address location="http://idas.tku.edu.tw:80/SIMService/SIM_ServiceService" />
+    </port>
+  </service>
+</definitions>
